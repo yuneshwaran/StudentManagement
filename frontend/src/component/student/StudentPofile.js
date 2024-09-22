@@ -13,8 +13,8 @@ const StudentProfile = () => {
 		age: "",
 		marks: "",
 	});
-	const [error, setError] = useState(null); // State for error handling
-	const [loading, setLoading] = useState(true); // State for loading status
+	const [error, setError] = useState(null);  
+	const [loading, setLoading] = useState(true);  
 
 	useEffect(() => {
 		loadStudent();
@@ -25,19 +25,19 @@ const StudentProfile = () => {
 			const result = await axios.get(`http://192.168.0.108:8080/api/student/${id}`);
 			setStudent(result.data);
 		} catch (error) {
-			setError("Error loading student data."); // Set error message
+			setError("Error loading student data.");  
 			console.error("Error loading student:", error);
 		} finally {
-			setLoading(false); // Update loading status
+			setLoading(false); 
 		}
 	};
 
 	if (loading) {
-		return <p>Loading...</p>; // Loading message
+		return <p>Loading...</p>;  
 	}
 
 	if (error) {
-		return <p>{error}</p>; // Error message
+		return <p>{error}</p>; 
 	}
 
 	return (

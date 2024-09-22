@@ -11,8 +11,8 @@ const EditStudent = () => {
         email: "",
         department: "",
         dob: "", 
-        age: "", // Optional, if you want to include it
-        marks: "", // Optional, if you want to include it
+        age: "", 
+        marks: "",  
     });
 
     const { name, email, department, dob, age, marks } = student;

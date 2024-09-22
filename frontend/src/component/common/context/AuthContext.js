@@ -7,15 +7,14 @@ export const AuthProvider = ({ children }) => {
 
 	const login = () => {
 		setIsAuthenticated(true);
-		localStorage.setItem('isAuthenticated', 'true'); // Store in local storage
+		localStorage.setItem('isAuthenticated', 'true');  
 	};
 
 	const logout = () => {
 		setIsAuthenticated(false);
-		localStorage.removeItem('isAuthenticated'); // Remove from local storage
+		localStorage.removeItem('isAuthenticated');  
 	};
-
-	// Check local storage for authentication state on initial render
+ 
 	React.useEffect(() => {
 		const storedAuth = localStorage.getItem('isAuthenticated');
 		if (storedAuth === 'true') {

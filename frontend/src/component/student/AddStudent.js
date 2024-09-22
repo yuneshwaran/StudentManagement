@@ -5,12 +5,12 @@ import axios from "axios";
 const AddStudent = () => {
     let navigate = useNavigate();
     const [student, setStudent] = useState({
-        name: "", // Full name
+        name: "",  
         email: "",
         department: "",
-        dob: "", // Date of birth
-        age: "", // Optional
-        marks: "", // Optional
+        dob: "", 
+        age: "",   
+        marks: "",  
     });
 
     const { name, email, department, dob, age, marks } = student;
@@ -104,7 +104,7 @@ const AddStudent = () => {
                     />
                 </div>
 
-                {/* Optional fields for age and marks */}
+          
                 <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="age">
                         Age

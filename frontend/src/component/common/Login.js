@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import { useAuth } from './context/AuthProvider'; // Adjust the path as necessary
+import { useAuth } from './context/AuthProvider';
 
 const Login = () => {
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState(''); // This will hold the DOB
+    const [password, setPassword] = useState(''); 
     const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const id = username; // Staff ID
-        const inputDob = password; // DOB from input
+        const id = username; 
+        const inputDob = password;
 
-        await login(id, inputDob); // Pass both ID and DOB
+        await login(id, inputDob); 
 
         if (localStorage.getItem('isAuthenticated') === 'true') {
-            window.location.href = '/'; // Redirect if authenticated
+            window.location.href = '/'; 
         }
     };
 
@@ -37,7 +37,7 @@ const Login = () => {
                 <div className="mb-3">
                     <label className="form-label">DOB [dd-mm-yyyy]</label>
                     <input
-                        type="text" // Text input for DOB
+                        type="text" 
                         className="form-control"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

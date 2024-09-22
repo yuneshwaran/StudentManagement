@@ -9,8 +9,8 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (id, inputDob) => {
         try {
-            const dobFromApi = await AuthConfig(id); // Fetch DOB from API
-            const formattedDobFromApi = dobFromApi.trim(); // Clean up the response
+            const dobFromApi = await AuthConfig(id); 
+            const formattedDobFromApi = dobFromApi.trim(); 
 
             if (formattedDobFromApi === inputDob) {
                 setIsAuthenticated(true);
