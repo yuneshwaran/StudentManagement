@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { useAuth } from './context/AuthProvider';
+import { useAuth } from './context/AuthProvider';  
 
 const Login = () => {
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState(''); 
+    const [password, setPassword] = useState('');  
     const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const id = username; 
-        const inputDob = password;
+        const id = username;  
+        const inputDob = password;  
 
-        await login(id, inputDob); 
+        await login(id, inputDob);  
 
         if (localStorage.getItem('isAuthenticated') === 'true') {
             window.location.href = '/'; 
@@ -37,7 +37,7 @@ const Login = () => {
                 <div className="mb-3">
                     <label className="form-label">DOB [dd-mm-yyyy]</label>
                     <input
-                        type="text" 
+                        type="text" // Text input for DOB
                         className="form-control"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

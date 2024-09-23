@@ -11,7 +11,7 @@ const EditStudent = () => {
         email: "",
         department: "",
         dob: "", 
-        age: "", 
+        age: "",  
         marks: "",  
     });
 
@@ -43,7 +43,7 @@ const EditStudent = () => {
             await axios.put(`http://localhost:8080/api/student/${id}`, {
                 ...student,
             });
-            navigate("/view-students");
+            navigate("/");
         } catch (error) {
             console.error("Error updating student:", error);
         }
@@ -112,6 +112,33 @@ const EditStudent = () => {
                         onChange={handleInputChange}
                     />
                 </div>
+                <div className="input-group mb-5">
+                    <label className="input-group-text" htmlFor="age">
+                        Age
+                    </label>
+                    <input
+                        className="form-control col-sm-6"
+                        type="number"
+                        name="age"
+                        id="age"
+                        value={age}
+                        onChange={handleInputChange}
+                    />
+                </div>
+
+                <div className="input-group mb-5">
+                    <label className="input-group-text" htmlFor="marks">
+                        Marks
+                    </label>
+                    <input
+                        className="form-control col-sm-6"
+                        type="number"
+                        name="marks"
+                        id="marks"
+                        value={marks}
+                        onChange={handleInputChange}
+                    />
+                </div>
 
                 <div className="row mb-5">
                     <div className="col-sm-2">
@@ -124,7 +151,7 @@ const EditStudent = () => {
 
                     <div className="col-sm-2">
                         <Link
-                            to={"/view-students"}
+                            to={"/"}
                             className="btn btn-outline-warning btn-lg">
                             Cancel
                         </Link>

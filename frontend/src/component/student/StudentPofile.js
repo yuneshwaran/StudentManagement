@@ -22,13 +22,13 @@ const StudentProfile = () => {
 
 	const loadStudent = async () => {
 		try {
-			const result = await axios.get(`http://192.168.0.108:8080/api/student/${id}`);
+			const result = await axios.get(`http://localhost:8080/api/student/${id}`);
 			setStudent(result.data);
 		} catch (error) {
 			setError("Error loading student data.");  
 			console.error("Error loading student:", error);
 		} finally {
-			setLoading(false); 
+			setLoading(false);  
 		}
 	};
 
@@ -37,7 +37,7 @@ const StudentProfile = () => {
 	}
 
 	if (error) {
-		return <p>{error}</p>; 
+		return <p>{error}</p>;  
 	}
 
 	return (

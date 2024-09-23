@@ -15,18 +15,18 @@ const StudentsView = () => {
     const loadStudents = async () => {
         try {
             const result = await axios.get("http://localhost:8080/api/student", {
-                validateStatus: () => true, 
+                validateStatus: () => true,  
             });
 
-            console.log(result);  
+            console.log(result);   
 
             if (result.status === 200) {
                 const formattedStudents = result.data.map((student) => ({
                     id: student.id,
                     fullName: student.name,
                     email: student.email,
-                    dob: new Date(student.dob).toLocaleDateString(),
-                    department: student.department || "N/A",
+                    dob: new Date(student.dob).toLocaleDateString(), 
+                    department: student.department ,
                     age: student.age,
                     marks: student.marks,
                 }));
@@ -70,7 +70,7 @@ const StudentsView = () => {
                                 <th scope="row">{index + 1}</th>
                                 <td>{student.fullName}</td>
                                 <td>{student.email}</td>
-                                <td>{student.dob}</td>
+                                <td>{student.dob}</td> 
                                 <td>{student.department}</td>
                                 <td>{student.marks}</td>
                                 <td className="mx-2">

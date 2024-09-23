@@ -2,6 +2,8 @@ package com.management.StudentManagement.model;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -13,7 +15,9 @@ import java.util.Date;
 @Component
 @Scope("prototype")
 public class Student {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     Date dob;

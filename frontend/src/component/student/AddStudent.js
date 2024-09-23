@@ -8,9 +8,9 @@ const AddStudent = () => {
         name: "",  
         email: "",
         department: "",
-        dob: "", 
-        age: "",   
-        marks: "",  
+        dob: "",  
+        age: "",  
+        marks: "", 
     });
 
     const { name, email, department, dob, age, marks } = student;
@@ -24,9 +24,9 @@ const AddStudent = () => {
 
     const saveStudent = async (e) => {
         e.preventDefault();
-        // Prepare the data to be sent
+       
         try {
-            await axios.post("http://192.168.0.108:8080/api/student", {
+            await axios.post("http://localhost:8080/api/student", {
                 name, 
                 email,
                 department,
@@ -34,7 +34,7 @@ const AddStudent = () => {
                 age, 
                 marks, 
             });
-            navigate("/view-students");
+            navigate("/");
         } catch (error) {
             console.error("Error adding student:", error);
         }
@@ -104,7 +104,6 @@ const AddStudent = () => {
                     />
                 </div>
 
-          
                 <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="age">
                         Age
@@ -145,7 +144,7 @@ const AddStudent = () => {
 
                     <div className="col-sm-2">
                         <Link
-                            to={"/view-students"}
+                            to={"/"}
                             className="btn btn-outline-warning btn-lg"
                         >
                             Cancel

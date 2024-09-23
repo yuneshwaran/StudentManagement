@@ -7,7 +7,7 @@ const NavBar = () => {
 
 	const handleLogout = () => {
 		logout();  
-		window.location.href = '/login';  
+		window.location.href = '/login'; 
 	};
 
 	return (
@@ -54,3 +54,8 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+
+
+ 
