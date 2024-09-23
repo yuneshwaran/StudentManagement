@@ -8,7 +8,6 @@ import {
 	BrowserRouter as Router,
 	Routes,
 	Route,
-	Navigate,
 } from "react-router-dom";
 
 import StudentProfile from "./component/student/StudentPofile";
@@ -16,7 +15,8 @@ import EditStudent from "./component/student/EditStudent";
 import AddStudent from "./component/student/AddStudent";
 import Login from "./component/common/Login";
 
-import { AuthProvider, useAuth } from "./component/common/context/AuthProvider"; // Import Auth context
+import { AuthProvider, useAuth } from "./component/common/context/AuthProvider"; 
+
 
 function App() {
 	return (

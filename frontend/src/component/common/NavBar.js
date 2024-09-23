@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./context/AuthProvider";  
+import StudentProfile from "../student/StudentPofile";
 
 const NavBar = () => {
 	const { logout } = useAuth();  
@@ -11,6 +12,7 @@ const NavBar = () => {
 	};
 
 	return (
+		<>
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
 			<div className="container-fluid">
 				<Link className="navbar-brand" to={"/"}>
@@ -50,6 +52,9 @@ const NavBar = () => {
 				</div>
 			</div>
 		</nav>
+
+		<StudentProfile />
+		</>
 	);
 };
 

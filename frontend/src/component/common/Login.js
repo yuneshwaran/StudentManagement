@@ -14,9 +14,10 @@ const Login = () => {
 
         await login(id, inputDob);  
 
-        if (localStorage.getItem('isAuthenticated') === 'true') {
+        if (localStorage.getItem('isAuthenticated') === 'true' ) {
             window.location.href = '/'; 
         }
+        
     };
 
     return (
@@ -45,6 +46,7 @@ const Login = () => {
                         required
                     />
                 </div>
+                
                 <button type="submit" className="btn btn-primary w-100">Login</button>
             </form>
         </div>

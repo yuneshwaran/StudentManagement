@@ -14,4 +14,9 @@ public interface LoginRepo extends JpaRepository<StaffLogin, Integer> {
 
     @Query(value = "SELECT FORMAT(dob, 'dd-MM-yyyy') AS dob FROM staff_login WHERE id = :id", nativeQuery = true)
     String findFormattedDobById(@Param("id") Long id);
+
+
+    StaffLogin findById(@Param("id") int id);
+
+
 }

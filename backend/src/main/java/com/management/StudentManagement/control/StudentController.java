@@ -1,6 +1,7 @@
 
 package com.management.StudentManagement.control;
 
+import com.management.StudentManagement.model.StaffLogin;
 import com.management.StudentManagement.model.Student;
 import com.management.StudentManagement.service.StaffLoginService;
 import com.management.StudentManagement.service.StudentService;
@@ -22,8 +23,12 @@ public class StudentController {
     private StaffLoginService loginService;
 
 
-    //Get login pass
     @GetMapping("/login/{id}")
+    public StaffLogin findbyId(@PathVariable int id){
+        return loginService.findbyId(id);
+    }
+    //Get login pass
+    @GetMapping("/login/dob/{id}")
     public String  getDob(@PathVariable long id){
         return loginService.getFormattedDob(id);
     }

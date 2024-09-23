@@ -11,10 +11,8 @@ public class StudentManagementApplication {
 
 	public static void main(String[] args) {
 
-	 ApplicationContext context =  SpringApplication.run(StudentManagementApplication.class, args);
+	 SpringApplication.run(StudentManagementApplication.class, args);
 
-	 StudentRepo repo = context.getBean(StudentRepo.class);
-	 Student s = context.getBean(Student.class);
 
 	}
 

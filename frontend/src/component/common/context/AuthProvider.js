@@ -13,9 +13,11 @@ export const AuthProvider = ({ children }) => {
             const formattedDobFromApi = dobFromApi.trim(); 
 
             if (formattedDobFromApi === inputDob) {
+
                 setIsAuthenticated(true);
                 localStorage.setItem('isAuthenticated', 'true');
             } else {
+                console.log(inputDob);
                 alert('Invalid credentials: DOB does not match');
             }
         } catch (error) {
