@@ -3,8 +3,9 @@ import axios from "axios";
 import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Search from "../common/Search";
+import NavBar from '../common/NavBar';
 
-const StudentsView = () => {
+const MainPage = () => {
     const [students, setStudents] = useState([]);
     const [search, setSearch] = useState("");
 
@@ -17,8 +18,7 @@ const StudentsView = () => {
             const result = await axios.get("http://localhost:8080/api/student", {
                 validateStatus: () => true,  
             });
-
-            console.log(result);   
+ 
 
             if (result.status === 200) {
                 const formattedStudents = result.data.map((student) => ({
@@ -46,6 +46,7 @@ const StudentsView = () => {
 
     return (
         <section>
+            <NavBar/>
             <Search search={search} setSearch={setSearch} />
             <table className="table table-bordered table-hover shadow">
                 <thead>
@@ -67,17 +68,17 @@ const StudentsView = () => {
                         )
                         .map((student, index) => (
                             <tr key={student.id}>
-                                <th scope="row">{index + 1}</th>
+                                <th>{student.id}</th>
                                 <td>{student.fullName}</td>
                                 <td>{student.email}</td>
                                 <td>{student.dob}</td> 
                                 <td>{student.department}</td>
                                 <td>{student.marks}</td>
-                                <td className="mx-2">
-                                    <Link to={`/student-profile/${student.id}`} className="btn btn-info">
+                                {/* <td className="mx-2">
+                                    <Link to={`/view-student/${student.id}`} className="btn btn-info">
                                         <FaEye />
                                     </Link>
-                                </td>
+                                </td> */}
                                 <td className="mx-2">
                                     <Link to={`/edit-student/${student.id}`} className="btn btn-warning">
                                         <FaEdit />
@@ -96,4 +97,4 @@ const StudentsView = () => {
     );
 };
 
-export default StudentsView;
+export default MainPage;

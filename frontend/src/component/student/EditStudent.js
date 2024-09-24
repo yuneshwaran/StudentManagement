@@ -151,7 +151,7 @@ const EditStudent = () => {
 
                     <div className="col-sm-2">
                         <Link
-                            to={"/"}
+                            to={"/main"}
                             className="btn btn-outline-warning btn-lg">
                             Cancel
                         </Link>

@@ -19,6 +19,9 @@ public class StudentService {
         return repo.findAll();
     }
 
+
+    public String findFormattedDobById(int id){return repo.findFormattedDobById(id);}
+
     public Student findbyId(int id) {
         return repo.findById(id).orElse(new Student());
     }

@@ -5,6 +5,7 @@ import axios from "axios";
 const AddStudent = () => {
     let navigate = useNavigate();
     const [student, setStudent] = useState({
+        id :"",
         name: "",  
         email: "",
         department: "",
@@ -13,7 +14,7 @@ const AddStudent = () => {
         marks: "", 
     });
 
-    const { name, email, department, dob, age, marks } = student;
+    const { id,name, email, department, dob, age, marks } = student;
 
     const handleInputChange = (e) => {
         setStudent({
@@ -27,6 +28,7 @@ const AddStudent = () => {
        
         try {
             await axios.post("http://localhost:8080/api/student", {
+                id,
                 name, 
                 email,
                 department,
@@ -34,7 +36,7 @@ const AddStudent = () => {
                 age, 
                 marks, 
             });
-            navigate("/");
+            navigate("/main");
         } catch (error) {
             console.error("Error adding student:", error);
         }
@@ -44,6 +46,22 @@ const AddStudent = () => {
         <div className="col-sm-8 py-2 px-5 offset-2 shadow">
             <h2 className="mt-5">Add Student</h2>
             <form onSubmit={saveStudent}>
+
+            <div className="input-group mb-5">
+                    <label className="input-group-text" htmlFor="name">
+                        Student Id
+                    </label>
+                    <input
+                        className="form-control col-sm-6"
+                        type="number"
+                        name="id"
+                        id="id"
+                        required
+                        value={id}
+                        onChange={handleInputChange}
+                    />
+                </div>
+
                 <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="name">
                         Full Name
@@ -144,7 +162,7 @@ const AddStudent = () => {
 
                     <div className="col-sm-2">
                         <Link
-                            to={"/"}
+                            to={"/main"}
                             className="btn btn-outline-warning btn-lg"
                         >
                             Cancel

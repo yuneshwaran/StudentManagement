@@ -1,15 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "./context/AuthProvider";  
 import StudentProfile from "../student/StudentPofile";
 
 const NavBar = () => {
-	const { logout } = useAuth();  
 
-	const handleLogout = () => {
-		logout();  
-		window.location.href = '/login'; 
-	};
 
 	return (
 		<>
@@ -32,28 +26,19 @@ const NavBar = () => {
 					<ul className="navbar-nav">
 						<li className="nav-item">
 							<Link
-								className="nav-link active"
-								aria-current="page"
-								to={"/"}>
-								View All Students
-							</Link>
-						</li>
-						<li className="nav-item">
-							<Link
 								className="nav-link"
 								to={"/add-students"}>
 								Add New Student
 							</Link>
 						</li>
 					</ul>
-					<button className="btn btn-outline-light ms-auto" onClick={handleLogout}>
+					<button className="btn btn-outline-light ms-auto" >
 						Logout
 					</button>
 				</div>
 			</div>
 		</nav>
 
-		<StudentProfile />
 		</>
 	);
 };

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams ,useNavigate} from "react-router-dom";
 import axios from "axios";
 
 const StudentProfile = () => {
 	const { id } = useParams();
-
+	const navigate = useNavigate(); 
 	const [student, setStudent] = useState({
 		name: "",
 		email: "",
@@ -111,6 +111,9 @@ const StudentProfile = () => {
 							<div className="col-sm-8">
 								<p className="text-muted mb-0">{student.marks}</p>
 							</div>
+							<button className="btn-sm-8 btn-outline-dark"  onClick={() => navigate('/')}>
+						Logout
+					</button>
 						</div>
 					</div>
 				</div>

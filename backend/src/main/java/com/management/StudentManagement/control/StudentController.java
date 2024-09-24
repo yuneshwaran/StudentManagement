@@ -23,13 +23,14 @@ public class StudentController {
     private StaffLoginService loginService;
 
 
-    @GetMapping("/login/{id}")
-    public StaffLogin findbyId(@PathVariable int id){
-        return loginService.findbyId(id);
+    //get student dob
+    @GetMapping("/login/student/{id}")
+    public String stuLogin(@PathVariable int id){
+        return studentService.findFormattedDobById(id);
     }
     //Get login pass
-    @GetMapping("/login/dob/{id}")
-    public String  getDob(@PathVariable long id){
+    @GetMapping("/login/staff/{id}")
+    public String  stafflogin(@PathVariable long id){
         return loginService.getFormattedDob(id);
     }
 

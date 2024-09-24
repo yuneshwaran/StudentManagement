@@ -13,11 +13,8 @@ public class StaffLoginService {
 
     public String getFormattedDob(Long id) {
         System.out.println("Service Called");
-        return loginRepo.findFormattedDobById(id);
+        return loginRepo.password(id);
         }
 
-    public StaffLogin findbyId(int id) {
-        return loginRepo.findById(id);
-    }
 
 }
