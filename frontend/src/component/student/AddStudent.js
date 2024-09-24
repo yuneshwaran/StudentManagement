@@ -47,7 +47,7 @@ const AddStudent = () => {
             <h2 className="mt-5">Add Student</h2>
             <form onSubmit={saveStudent}>
 
-            <div className="input-group mb-5">
+            {/* <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="name">
                         Student Id
                     </label>
@@ -60,7 +60,7 @@ const AddStudent = () => {
                         value={id}
                         onChange={handleInputChange}
                     />
-                </div>
+                </div> */}
 
                 <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="name">

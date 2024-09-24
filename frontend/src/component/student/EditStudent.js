@@ -51,7 +51,7 @@ const EditStudent = () => {
 
     return (
         <div className="col-sm-8 py-2 px-5 offset-2 shadow">
-            <h2 className="mt-5">Edit Student</h2>
+            <h2 className="mt-5">Edit Student with id : {id}</h2>
             <form onSubmit={updateStudent}>
                 <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="name">
@@ -98,7 +98,7 @@ const EditStudent = () => {
                     />
                 </div>
 
-                <div className="input-group mb-5">
+                {/* <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="dob">
                         Date of Birth
                     </label>
@@ -111,7 +111,7 @@ const EditStudent = () => {
                         value={dob}
                         onChange={handleInputChange}
                     />
-                </div>
+                </div> */}
                 <div className="input-group mb-5">
                     <label className="input-group-text" htmlFor="age">
                         Age
