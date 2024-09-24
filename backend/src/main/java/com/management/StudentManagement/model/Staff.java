@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 @Component
 @Scope("prototype")
-public class StaffLogin {
+public class Staff {
 
     @Id
     private int id;

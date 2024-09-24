@@ -52,26 +52,26 @@ const Login = () => {
             <form onSubmit={handleSubmit} className="border p-4 rounded shadow">
                 <h2 className="mb-4 text-center">Login</h2>
                 <div className="mb-3">
-                    <label className="form-label">ID</label>
+                    <label className="form-label">Login ID</label>
                     <input
                         type="text"
                         className="form-control"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Enter Staff/Student ID"
+                        placeholder="Enter Login ID"
                         required
                     />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">
-                        {isStaffMode ? 'Password' : 'DOB [dd-mm-yyyy]'}
+                        Password
                     </label>
                     <input
                         type="text"
                         className="form-control"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder={isStaffMode ? "Enter Password" : "Enter DOB"}
+                        placeholder={isStaffMode ? "Enter Password" : "[dd-MM-yyyy]"}
                         required
                     />
                 </div>

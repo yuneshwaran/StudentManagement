@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import StudentProfile from "../student/StudentPofile";
+import { Link , useNavigate } from "react-router-dom";
+
 
 const NavBar = () => {
 
+	let navigate = useNavigate();
 
 	return (
 		<>
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
 			<div className="container-fluid">
-				<Link className="navbar-brand" to={"/"}>
+				<Link className="navbar-brand" to={$}>
 					Student Management
 				</Link>
 				<button
@@ -32,7 +33,7 @@ const NavBar = () => {
 							</Link>
 						</li>
 					</ul>
-					<button className="btn btn-outline-light ms-auto" >
+					<button className="btn btn-outline-light ms-auto" onClick={() => navigate('/')} >
 						Logout
 					</button>
 				</div>

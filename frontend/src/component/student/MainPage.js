@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import Search from "../common/Search";
 import NavBar from '../common/NavBar';
 
@@ -12,6 +13,8 @@ const MainPage = () => {
     useEffect(() => {
         loadStudents();
     }, []);
+
+
 
     const loadStudents = async () => {
         try {
@@ -74,11 +77,11 @@ const MainPage = () => {
                                 <td>{student.dob}</td> 
                                 <td>{student.department}</td>
                                 <td>{student.marks}</td>
-                                {/* <td className="mx-2">
+                                <td className="mx-2">
                                     <Link to={`/view-student/${student.id}`} className="btn btn-info">
                                         <FaEye />
                                     </Link>
-                                </td> */}
+                                </td>
                                 <td className="mx-2">
                                     <Link to={`/edit-student/${student.id}`} className="btn btn-warning">
                                         <FaEdit />

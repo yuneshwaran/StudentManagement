@@ -1,19 +1,17 @@
 package com.management.StudentManagement.service;
 
-import com.management.StudentManagement.model.StaffLogin;
-import com.management.StudentManagement.repository.LoginRepo;
+import com.management.StudentManagement.repository.StaffRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StaffLoginService {
+public class StaffService {
 
     @Autowired
-    private LoginRepo loginRepo;
+    private StaffRepo staffRepo;
 
     public String getFormattedDob(Long id) {
-        System.out.println("Service Called");
-        return loginRepo.password(id);
+        return staffRepo.password(id);
         }
 
 
