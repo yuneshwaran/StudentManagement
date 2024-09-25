@@ -17,16 +17,25 @@ public class Staff {
     private Date dob;
     private String password;
 
+
     public void setId(int id) {
         this.id = id;
     }
-
-
     public int getId() {
         return id;
     }
 
+    
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
     public Date getDob() {
         return dob;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

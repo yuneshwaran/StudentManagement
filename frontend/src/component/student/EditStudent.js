@@ -43,7 +43,7 @@ const EditStudent = () => {
             await axios.put(`http://localhost:8080/api/student/${id}`, {
                 ...student,
             });
-            navigate("/");
+            navigate("/main");
         } catch (error) {
             console.error("Error updating student:", error);
         }

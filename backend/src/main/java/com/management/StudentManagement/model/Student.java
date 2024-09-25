@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 @Entity

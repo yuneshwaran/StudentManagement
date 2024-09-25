@@ -32,9 +32,9 @@ const AddStudent = () => {
                 name, 
                 email,
                 department,
-                dob, 
-                age, 
-                marks, 
+                dob,
+                age,
+                marks,
             });
             navigate("/main");
         } catch (error) {
